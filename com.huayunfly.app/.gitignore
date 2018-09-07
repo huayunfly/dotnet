@@ -1,0 +1,4 @@
+# .gitignore
+/.vs
+/com.huayunfly.app/obj
+/com.huayunfly.app/bin
