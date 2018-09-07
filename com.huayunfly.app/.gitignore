@@ -2,3 +2,5 @@
 /.vs
 /com.huayunfly.app/obj
 /com.huayunfly.app/bin
+/com.huayunfly.app.xunit.tests/obj
+/com.huayunfly.app.xunit.tests/bin
