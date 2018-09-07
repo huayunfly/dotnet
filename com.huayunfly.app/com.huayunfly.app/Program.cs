@@ -10,6 +10,7 @@ namespace com.huayunfly.app
         {
             Console.WriteLine($"Hello World!");
             LINQQuery();
+            BubbleSort();
         }
 
         static void LINQQuery()
@@ -24,5 +25,15 @@ namespace com.huayunfly.app
 
             }
         }
+
+        static void BubbleSort()
+        {
+            IList<int> sortArray = new List<int> { 9, 1, 7, 3, 5, 4 };
+            IList<int> sorted = BubbleSorter.BubbleSort(sortArray, (a, b) => a < b);
+            string formatArrayString = 
+                string.Join(",", sortArray.Select(x => x.ToString()).ToArray());
+            Console.WriteLine(formatArrayString);
+        }
+
     }
 }
