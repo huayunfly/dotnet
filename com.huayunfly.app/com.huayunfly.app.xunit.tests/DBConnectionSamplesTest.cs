@@ -7,15 +7,11 @@ namespace com.huayunfly.app.xunit.tests
     public class DBConnectionSamplesTest
     {
         [Fact]
-        public void OpenConnectionTest()
-        {
+        public void OpenConnectionTest() => 
             Assert.True(DBConnectionSamples.OpenConnection());
-        }
 
         [Fact]
-        public void OpenConnectionUsingConfigTest()
-        {
+        public void OpenConnectionUsingConfigTest() => 
             Assert.True(DBConnectionSamples.OpenConnectionUsingConfig());
-        }
     }
 }

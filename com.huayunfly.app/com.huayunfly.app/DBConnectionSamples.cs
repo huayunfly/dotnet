@@ -10,9 +10,7 @@ namespace com.huayunfly.app
     {
         public static bool OpenConnection()
         {
-            string connectionString = @"server=(localdb)\MSSQLLocalDB;" +
-                "integrated security=SSPI; database=Books";
-            return OpenConnection(connectionString);
+            return OpenConnection(GetConnectionString());
         }
 
         public static bool OpenConnectionUsingConfig()
@@ -25,6 +23,12 @@ namespace com.huayunfly.app
             string connectionString = config["Data:DefaultConnection:ConnectionString"];
             return OpenConnection(connectionString);
 
+        }
+
+        static internal string GetConnectionString()
+        {
+            return @"server=(localdb)\MSSQLLocalDB;" + 
+                "integrated security=SSPI; database=Books";
         }
 
         private static bool OpenConnection(string connectionString)
