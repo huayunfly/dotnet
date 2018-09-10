@@ -16,6 +16,10 @@
     <ProjectReference Include="..\com.huayunfly.app\com.huayunfly.app.csproj" />
   </ItemGroup>
 
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="copy ..\com.huayunfly.app\db_connection_config.json $(TargetDir)" />
+  </Target>
+
 
 
 </Project>
