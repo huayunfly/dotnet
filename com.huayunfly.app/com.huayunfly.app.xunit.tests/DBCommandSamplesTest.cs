@@ -10,5 +10,9 @@ namespace com.huayunfly.app.xunit.tests
         [Fact]
         public void ExecuteNoQueryTest() => 
             Assert.Equal(1, DBCommandSamples.ExecuteNoQuery());
+
+        [Fact]
+        public void ExecuteReaderTest() =>
+            Assert.Equal(13, DBCommandSamples.ExecuteReader("Professional"));
     }
 }
