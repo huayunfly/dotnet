@@ -14,5 +14,9 @@ namespace com.huayunfly.app.xunit.tests
         [Fact]
         public void ExecuteReaderTest() =>
             Assert.Equal(13, DBCommandSamples.ExecuteReader("Professional"));
+
+        [Fact]
+        public void StoredProcedureTest() =>
+            Assert.Equal(21, DBCommandSamples.StoredProcedure("Wrox press"));
     }
 }

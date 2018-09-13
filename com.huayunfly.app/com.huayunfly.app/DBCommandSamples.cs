@@ -76,6 +76,36 @@ namespace com.huayunfly.app
             return records;
         }
 
+        public static int StoredProcedure(string publisher)
+        {
+            int records = 0;
+            using (var connection = new SqlConnection(DBConnectionSamples.GetConnectionString()))
+            {
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = "[ProCSharp].[GetBooksByPublisher]";
+                command.CommandType = CommandType.StoredProcedure;
+                SqlParameter p1 = command.CreateParameter();
+                p1.SqlDbType = SqlDbType.NVarChar;
+                p1.ParameterName = "@Publisher";
+                p1.Value = publisher;
+                command.Parameters.Add(p1);
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int id = (int)reader["Id"];
+                        string title = (string)reader["Title"];
+                        string pub = (string)reader["Publisher"];
+                        DateTime? releaseDate = 
+                            reader.IsDBNull(3) ? (DateTime?)null : (DateTime)reader["ReleaseDate"];
+                        records++;
+                    }
+                }
+            }
+            return records;
+        }
+
         private static string GetBookQuery() => "SELECT [Id], [Title], [Publisher], [ReleaseDate] " +
                     "FROM [ProCSharp].[Books] WHERE lower([Title]) LIKE @Title " +
                     "ORDER BY [ReleaseDate] DESC";
