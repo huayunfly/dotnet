@@ -18,5 +18,9 @@ namespace com.huayunfly.app.xunit.tests
         [Fact]
         public void StoredProcedureTest() =>
             Assert.Equal(21, DBCommandSamples.StoredProcedure("Wrox press"));
+
+        [Fact]
+        public void ExecuteScalarTest() =>
+            Assert.Equal(24, DBCommandSamples.ExecuteScalar());
     }
 }

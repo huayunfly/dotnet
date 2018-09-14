@@ -76,6 +76,19 @@ namespace com.huayunfly.app
             return records;
         }
 
+        public static int ExecuteScalar()
+        {
+            object count = 0;
+            using (var connection = new SqlConnection(DBConnectionSamples.GetConnectionString()))
+            {
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = GetCountQuery();
+                connection.Open();
+                count = command.ExecuteScalar();
+            }
+            return (int)count;
+        }
+
         public static int StoredProcedure(string publisher)
         {
             int records = 0;
@@ -109,6 +122,8 @@ namespace com.huayunfly.app
         private static string GetBookQuery() => "SELECT [Id], [Title], [Publisher], [ReleaseDate] " +
                     "FROM [ProCSharp].[Books] WHERE lower([Title]) LIKE @Title " +
                     "ORDER BY [ReleaseDate] DESC";
+
+        private static string GetCountQuery() => "SELECT COUNT(*) FROM [ProCSharp].[Books]";
 
     }
 }
