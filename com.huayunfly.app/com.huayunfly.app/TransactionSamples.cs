@@ -51,7 +51,7 @@ namespace com.huayunfly.app
                 catch (Exception ex)
                 {
                     Console.WriteLine($"error {ex.Message}, rolling back");
-                    tx.Commit();
+                    tx.Rollback();
                 }    
             }
         }
