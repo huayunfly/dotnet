@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using com.huayunfly.servicebus.messages;
 using NServiceBus;
+using NServiceBus.Features;
 using NServiceBus.Logging;
 
 namespace ClientUI
@@ -28,11 +29,21 @@ namespace ClientUI
             // "ClientUI" is endpoint name, which serves as logic identity for endpoint.
             // It also forms a naming convention by other service, like "input queue".
             var endpointConfiguration = new EndpointConfiguration("ClientUI");
-            var transport = endpointConfiguration.UseTransport<LearningTransport>();
 
-            // Set transport storage directory using resourse.resx
-            transport.StorageDirectory(_storagePath);
+            #region ConfigureLearningTransport
+            // Set transport storage directory for learningtransport
+            // var transport = endpointConfiguration.UseTransport<LearningTransport>();
+            // transport.StorageDirectory(_storagePath);
+            #endregion
 
+            #region ConfigureMsmqTransport
+            var transport = endpointConfiguration.UseTransport<MsmqTransport>();
+            // transport.DisableInstaller();
+            #endregion
+            endpointConfiguration.SendFailedMessagesTo("error");
+            endpointConfiguration.UsePersistence<InMemoryPersistence>();
+            endpointConfiguration.EnableInstallers();
+           
             // This is logical routing, the mapping of specific message types to logical endpoints 
             // that can process those messages. Each command message should have one logical endpoint 
             // that owns that message and can process it.
@@ -42,8 +53,6 @@ namespace ClientUI
             var routing = transport.Routing();
             routing.RouteToEndpoint(typeof(PlaceOrder).Assembly, "com.huayunfly.servicebus.messages", "Sales");
             routing.RouteToEndpoint(typeof(RequestDataMessage).Assembly, "com.huayunfly.servicebus.messages", "Sales");
-
-
 
             // An 'endpoint' is a logical concept, defined by an endpoint name and associated code, 
             // that defines an owner responsible for processing messages.

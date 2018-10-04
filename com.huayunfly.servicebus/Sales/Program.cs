@@ -25,9 +25,19 @@ namespace Sales
             // "Sales" is endpoint name, which serves as logic identity for endpoint.
             // It also forms a naming convention by other service, like "input queue".
             var endpointConfiguration = new EndpointConfiguration("sales");
-            var transport = endpointConfiguration.UseTransport<LearningTransport>();
-            // Set transport storage directory using resourse.resx
-            transport.StorageDirectory(_storagePath);
+            #region ConfigureLearningTransport
+            // Set transport storage directory for learningtransport
+            // var transport = endpointConfiguration.UseTransport<LearningTransport>();
+            // transport.StorageDirectory(_storagePath);
+            #endregion
+
+            #region ConfigureMsmqTransport
+            var transport = endpointConfiguration.UseTransport<MsmqTransport>();
+            // transport.DisableInstaller();
+            #endregion
+            endpointConfiguration.SendFailedMessagesTo("error");
+            endpointConfiguration.UsePersistence<InMemoryPersistence>();
+            endpointConfiguration.EnableInstallers();
 
             var endpointInstance = await Endpoint.Start(endpointConfiguration).
                 ConfigureAwait(false);
