@@ -47,8 +47,17 @@ namespace ClientUI
             // Within one logical endpoint, there may be many physical endpoint instances deployed 
             // to multiple servers.
             var routing = transport.Routing();
+
+            #region Manual routing
             routing.RouteToEndpoint(typeof(PlaceOrder).Assembly, "com.huayunfly.servicebus.messages", "Sales");
             routing.RouteToEndpoint(typeof(RequestDataMessage).Assembly, "com.huayunfly.servicebus.messages", "Sales");
+            #endregion
+
+            #region Physical routing with MSMQ
+            var instanceMappingFile = routing.InstanceMappingFile();
+            var fileSettings = instanceMappingFile.FilePath("instance-mapping.xml");
+            fileSettings.RefreshInterval(TimeSpan.FromSeconds(45));
+            #endregion
 
             // An 'endpoint' is a logical concept, defined by an endpoint name and associated code, 
             // that defines an owner responsible for processing messages.

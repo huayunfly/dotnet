@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<endpoints>
+  <endpoint name="Sales">
+    <instance machine="hy-pc"/>
+    <instance machine="hy-pc1"/>
+    <instance machine="hy-pc2"/>
+  </endpoint>
+  <endpoint name="Shipping">
+    <instance machine="hy-pc"/>
+  </endpoint>
+  <endpoint name="Billing">
+    <instance machine="hy-pc"/>
+  </endpoint>
+</endpoints>
+
