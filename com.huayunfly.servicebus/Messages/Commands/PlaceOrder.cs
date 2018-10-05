@@ -8,4 +8,9 @@ namespace com.huayunfly.servicebus.messages
     {
         public string OrderId { get; set; }
     }
+
+    public class OrderPlaced : IEvent
+    {
+        public string OrderId { get; set; }
+    }
 }

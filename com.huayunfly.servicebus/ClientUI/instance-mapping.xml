@@ -8,7 +8,8 @@
     <instance machine="hy-pc"/>
   </endpoint>
   <endpoint name="Billing">
-    <instance machine="hy-pc"/>
+    <instance machine="192.168.0.105"/>
+    <instance machine="192.168.0.106"/>
   </endpoint>
 </endpoints>
 

@@ -4,7 +4,7 @@ using com.huayunfly.servicebus.messages;
 using NServiceBus;
 using NServiceBus.Logging;
 
-namespace ClientUI
+namespace com.huayunfly.servicebus
 {
 
     class Program

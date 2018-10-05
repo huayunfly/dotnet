@@ -12,7 +12,11 @@ namespace com.huayunfly.servicebus
         public Task Handle(PlaceOrder message, IMessageHandlerContext context)
         {
             log.Info("Received PlaceOrder, OrderId=" + message.OrderId);
-            return Task.CompletedTask;
+            var orderPlaced = new OrderPlaced()
+            {
+                OrderId = message.OrderId
+            };
+            return context.Publish(orderPlaced);
         }
     }
 }
