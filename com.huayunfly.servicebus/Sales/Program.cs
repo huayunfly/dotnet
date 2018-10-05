@@ -21,7 +21,8 @@ namespace Sales
 
             // "Sales" is endpoint name, which serves as logic identity for endpoint.
             // It also forms a naming convention by other service, like "input queue".
-            var endpointConfiguration = new EndpointConfiguration("sales");
+            // Endpoint name is Case Sensitive.
+            var endpointConfiguration = new EndpointConfiguration("Sales");
             #region ConfigureLearningTransport
             // Set transport storage directory for learningtransport
             // var transport = endpointConfiguration.UseTransport<LearningTransport>();
