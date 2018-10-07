@@ -17,8 +17,6 @@ namespace com.huayunfly.servicetransit
         public async Task Consume(ConsumeContext<ISimpleRequest> context)
         {
             _log.Info($"Return CustomName for {context.Message.CustomId}");
-            throw new Exception("Very bad things happened");
-
             await context.RespondAsync(new SimpleResponse()
             { CustomName = $"Customer number {context.Message.CustomId}" }
             );
