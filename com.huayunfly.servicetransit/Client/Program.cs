@@ -31,6 +31,10 @@ namespace com.huayunfly.servicetransit
                 var requestClient = CreateRequestClient(busControl);
                 await RunLoop(requestClient).ConfigureAwait(false);
             }
+            catch (RequestTimeoutException ex)
+            {
+                Console.WriteLine($"RequestTimeoutException: {ex.Message}");
+            }
             catch (Exception ex)
             {
                 Console.WriteLine($"Exception: {ex.Message}");
@@ -52,6 +56,9 @@ namespace com.huayunfly.servicetransit
                     case ConsoleKey.P:
                         var request = new SimpleRequest(Guid.NewGuid().ToString());
                         Console.WriteLine($"Sending SimpleRequest Message with CustomId {request.CustomId} ...");
+
+                        // Throws System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess 
+                        // if the remote MassTransit Consumer failed to handle exceptions.
                         ISimpleResponse response = 
                             await requestClient.Request(request).ConfigureAwait(false);
                         Console.WriteLine($"Received SimpleReponse Message with CustomName <{response.CustomName}>");
