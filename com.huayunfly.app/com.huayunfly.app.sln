@@ -5,7 +5,11 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "com.huayunfly.app", "com.huayunfly.app\com.huayunfly.app.csproj", "{06AA4AC3-8F47-4620-869D-B5CC460C8829}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.huayunfly.app.xunit.tests", "com.huayunfly.app.xunit.tests\com.huayunfly.app.xunit.tests.csproj", "{04796680-1DE7-4C5F-BAF3-2C84C4A10235}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "com.huayunfly.app.xunit.tests", "com.huayunfly.app.xunit.tests\com.huayunfly.app.xunit.tests.csproj", "{04796680-1DE7-4C5F-BAF3-2C84C4A10235}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.huayunfly.workflow.tests", "com.huayunfly.workflow.tests\com.huayunfly.workflow.tests.csproj", "{9CC57B9A-DBD9-4E99-B80D-EC591DF04118}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflow.Activities", "Workflow.Activities\Workflow.Activities.csproj", "{FD98A05C-416F-4041-AE5C-9C0697804C6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{04796680-1DE7-4C5F-BAF3-2C84C4A10235}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04796680-1DE7-4C5F-BAF3-2C84C4A10235}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04796680-1DE7-4C5F-BAF3-2C84C4A10235}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CC57B9A-DBD9-4E99-B80D-EC591DF04118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CC57B9A-DBD9-4E99-B80D-EC591DF04118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CC57B9A-DBD9-4E99-B80D-EC591DF04118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CC57B9A-DBD9-4E99-B80D-EC591DF04118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD98A05C-416F-4041-AE5C-9C0697804C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD98A05C-416F-4041-AE5C-9C0697804C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD98A05C-416F-4041-AE5C-9C0697804C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD98A05C-416F-4041-AE5C-9C0697804C6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

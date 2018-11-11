@@ -9,12 +9,12 @@ namespace com.huayunfly.app
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine($"Hello World!");
             LINQQuery();
             BubbleSort();
-            EventSourceSampleAsync();
+            await EventSourceSampleAsync();
             Console.ReadLine();
         }
 
@@ -45,19 +45,6 @@ namespace com.huayunfly.app
             SimpleEventSourceSample.Dispose();
         }
 
-        private static void LogSampleUsingDI()
-        {
-            var services = new ServiceCollection();
-            services.AddLogging(builder =>
-            {
-                builder.AddEventSourceLogger();
-                builder.AddConsole();
-#if DEBUG
-                builder.AddDebug();
-#endif
-            });
-
-        }
 
     }
 }

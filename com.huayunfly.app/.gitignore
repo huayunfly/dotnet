@@ -4,3 +4,9 @@
 /com.huayunfly.app/bin
 /com.huayunfly.app.xunit.tests/obj
 /com.huayunfly.app.xunit.tests/bin
+/com.huayunfly.workflow.tests/obj
+/com.huayunfly.workflow.tests/bin
+/Workflow.Activities/obj
+/Workflow.Activities/bin
+/TestResults
+/packages
