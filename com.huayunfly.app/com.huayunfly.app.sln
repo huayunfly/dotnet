@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.huayunfly.workflow.test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflow.Activities", "Workflow.Activities\Workflow.Activities.csproj", "{FD98A05C-416F-4041-AE5C-9C0697804C6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientTest", "HttpClientTest\HttpClientTest.csproj", "{74EA9A43-4342-4819-9DEF-44F5C925048B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FD98A05C-416F-4041-AE5C-9C0697804C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD98A05C-416F-4041-AE5C-9C0697804C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD98A05C-416F-4041-AE5C-9C0697804C6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74EA9A43-4342-4819-9DEF-44F5C925048B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74EA9A43-4342-4819-9DEF-44F5C925048B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74EA9A43-4342-4819-9DEF-44F5C925048B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74EA9A43-4342-4819-9DEF-44F5C925048B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

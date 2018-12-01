@@ -8,5 +8,7 @@
 /com.huayunfly.workflow.tests/bin
 /Workflow.Activities/obj
 /Workflow.Activities/bin
+/HttpClientTest/obj
+/HttpClientTest/bin
 /TestResults
 /packages
